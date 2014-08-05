@@ -336,6 +336,7 @@
                   }
 
                 }
+                centerCoords.x = 1384;
                 radians = Math.atan2(movePoint.y - centerCoords.y, movePoint.x - centerCoords.x);
                 lastDegrees = data.lastDegrees = data.degrees;
                 degrees = data.degrees = radians * (180 / Math.PI);
