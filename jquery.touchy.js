@@ -92,6 +92,7 @@
         end: true
       },
       requiredTouches: 1,
+      centerPointX: 1384,
       data: {},
       proxyEvents: ["TouchStart", "TouchMove", "GestureChange", "TouchEnd"]
     },
@@ -308,10 +309,12 @@
                   radians,
                   degrees,
                   lastDegrees,
-                  degreeDelta;
+                  degreeDelta,
+                  centerPointX;
 
                 lastMovePoint = data.lastMovePoint = data.movePoint || data.startPoint;
                 lastMoveDate = data.lastMoveDate = data.moveDate || data.startDate;
+                centerPointX = data.centerPointX;
                 movePoint = data.movePoint = {
                   "x": touches[0].pageX,
                   "y": touches[0].pageY
@@ -336,7 +339,7 @@
                   }
 
                 }
-                centerCoords.x = 1384;
+                centerCoords.x = centerPointX;
                 radians = Math.atan2(movePoint.y - centerCoords.y, movePoint.x - centerCoords.x);
                 lastDegrees = data.lastDegrees = data.degrees;
                 degrees = data.degrees = radians * (180 / Math.PI);
