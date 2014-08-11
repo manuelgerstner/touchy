@@ -91,9 +91,10 @@
         move: true,
         end: true
       },
-      requiredTouches: 1,
-      centerPointX: 1384,
-      data: {},
+      requiredTouches: 1
+      data: {
+        centerPointX: 1384
+      },
       proxyEvents: ["TouchStart", "TouchMove", "GestureChange", "TouchEnd"]
     },
     swipe: { // the user touches the screen, then rapidly drags his or her finger(s), then stops touching the screen, all in a "flicking" or "swiping" motion.  may require up to four fingers.
@@ -338,8 +339,8 @@
                     break;
                   }
 
-                }
-                centerCoords.x = centerPointX;
+                };
+                centerCoords.x = data.settings.centerPointX;
                 radians = Math.atan2(movePoint.y - centerCoords.y, movePoint.x - centerCoords.x);
                 lastDegrees = data.lastDegrees = data.degrees;
                 degrees = data.degrees = radians * (180 / Math.PI);
