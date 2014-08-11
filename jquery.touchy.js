@@ -91,7 +91,7 @@
         move: true,
         end: true
       },
-      requiredTouches: 1
+      requiredTouches: 1,
       data: {
         centerPointX: 1384
       },
